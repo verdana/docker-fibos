@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # COPY ./installer-linux-27.sh installer.sh
 
 # if or not use apt mirrors
-RUN sed -i -e "s/\(security\|archive\).ubuntu/mirrors.aliyun/g" /etc/apt/sources.list
+# RUN sed -i -e "s/\(security\|archive\).ubuntu/mirrors.aliyun/g" /etc/apt/sources.list
 
 RUN apt-get update > /dev/null \
 && apt-get install -y curl libgmp-dev libssl1.0.0 sudo \
