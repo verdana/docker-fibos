@@ -1,0 +1,25 @@
+version: '3.5'
+services:
+    fibos:
+        container_name: 'fibos'
+        image: verdana/fibos:latest
+        ports:
+            - 8888:8888
+            - 9876:9876
+        volumes:
+            - ./public:/public
+        environment:
+            - TZ=Asia/Shanghai
+        networks:
+            backend:
+                ipv4_address: "172.100.0.10"
+
+networks:
+    backend:
+        name: fibos-net
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: "172.100.0.0/16"
+
