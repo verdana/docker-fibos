@@ -27,5 +27,5 @@ VOLUME /public
 
 EXPOSE 8888 9876
 
-CMD ["/usr/local/bin/fibos"]
+CMD ["/usr/local/bin/fibos", "/public/node.js"]
 
