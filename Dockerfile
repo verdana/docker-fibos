@@ -23,9 +23,10 @@ RUN apt-get update > /dev/null \
 
 ENV DEBIAN_FRONTEND teletype
 
-VOLUME /public
+WORKDIR /public
+VOLUME  /public
 
 EXPOSE 8888 9876
 
-CMD ["/usr/local/bin/fibos", "/public/node.js"]
+CMD ["/usr/local/bin/fibos", "node.js"]
 
